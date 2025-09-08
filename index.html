@@ -13,21 +13,21 @@
             font-family: 'Poppins', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            
-            /* Background image from the provided GitHub URL */
-            background-image: url('https://raw.githubusercontent.com/FITGENCE/canvaimage/3b55e0e5c45ea1161399dca0027218a5ef73fe16/market%20gence.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            
+            background: #100f2a;
             overflow-x: hidden;
             color: #d1d5db;
         }
 
-        /* Hiding the old animated canvas */
-        #bg-canvas {
-            display: none;
+        /* --- VIDEO BACKGROUND CSS --- */
+        #video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7); /* Slightly darken the video for better text readability */
         }
         
         .glass-container {
@@ -57,8 +57,11 @@
 </head>
 <body class="text-gray-200">
 
-    <!-- Canvas for Motion Graphics -->
-    <canvas id="bg-canvas"></canvas>
+    <!-- Video Background Element -->
+    <video id="video-bg" autoplay muted loop playsinline>
+        <source src="https://raw.githubusercontent.com/FITGENCE/motion-bg-vid/main/market%20gence%20bg%20vid%20short.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <!-- Header -->
     <header class="glass-container sticky top-0 z-50">
@@ -173,6 +176,5 @@
             <p class="text-gray-500">&copy; 2024 Marketgence. All Rights Reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
